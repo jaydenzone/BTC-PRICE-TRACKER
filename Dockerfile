@@ -1,23 +1,21 @@
-# Use official Python 3.11 image
 FROM python:3.11-slim
 
-# Set environment
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-
-# Set work directory
+# Set working directory
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y build-essential
-
-# Install Python dependencies
+# Install dependencies
 COPY requirements.txt .
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip setuptools wheel
 RUN pip install -r requirements.txt
 
-# Copy project
+# Copy app code
 COPY . .
 
-# Run app
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:8000"]
+# Set environment variable
+ENV PYTHONUNBUFFERED=1
+
+# Expose port
+EXPOSE 10000
+
+# Start the app
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:10000"]
