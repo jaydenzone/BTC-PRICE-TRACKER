@@ -16,7 +16,7 @@ def test_api_endpoints():
     
     # Test main page
     try:
-        response = requests.get(f"{base_url}/")
+        response = requests.get(f"{base_url}/", timeout=10)
         if response.status_code == 200:
             print("✅ Main page: OK")
         else:
@@ -26,7 +26,7 @@ def test_api_endpoints():
     
     # Test Bitcoin API
     try:
-        response = requests.get(f"{base_url}/api/bitcoin")
+        response = requests.get(f"{base_url}/api/bitcoin", timeout=10)
         if response.status_code == 200:
             data = response.json()
             print("✅ Bitcoin API: OK")
@@ -40,7 +40,7 @@ def test_api_endpoints():
     
     # Test Historical API
     try:
-        response = requests.get(f"{base_url}/api/historical")
+        response = requests.get(f"{base_url}/api/historical", timeout=10)
         if response.status_code == 200:
             data = response.json()
             print("✅ Historical API: OK")
