@@ -1,0 +1,4 @@
+flask
+pandas==2.2.2
+plotly
+gunicorn

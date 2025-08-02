@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bitcoin Tracker</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body style="background-color:#121212; color:white; font-family:sans-serif;">
+  <h1>🚀 Bitcoin Price Tracker</h1>
+  <p>Current Price: ${{ bitcoin_data['price_usd'] }}</p>
+  <p>24h Change: {{ bitcoin_data['price_change_24h'] }}%</p>
+  <p>Market Cap: ${{ bitcoin_data['market_cap'] }}</p>
+  <p>Volume (24h): ${{ bitcoin_data['volume_24h'] }}</p>
+  <p>Circulating Supply: {{ bitcoin_data['circulating_supply'] }}</p>
+  <p>Max Supply: {{ bitcoin_data['max_supply'] }}</p>
+  <p>ATH: ${{ bitcoin_data['ath'] }}</p>
+  <p>ATL: ${{ bitcoin_data['atl'] }}</p>
+
+  <div id="chart" style="width:100%; height:500px;"></div>
+  <script>
+    var chartData = {{ chart_json | safe }};
+    Plotly.newPlot('chart', chartData.data, chartData.layout);
+  </script>
+</body>
+</html>
+

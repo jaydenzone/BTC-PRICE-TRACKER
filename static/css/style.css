@@ -1,0 +1,328 @@
+/* Custom CSS for Bitcoin Price Tracker */
+
+:root {
+    --bitcoin-orange: #f7931a;
+    --bitcoin-dark: #1a1a1a;
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-warning: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+body {
+    background-color: #1a1a1a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-text {
+    font-size: 0.9rem;
+}
+
+/* Bitcoin Logo */
+.bitcoin-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bitcoin-orange);
+    padding: 8px;
+}
+
+/* Price Display */
+.bg-gradient-primary {
+    background: var(--gradient-primary) !important;
+}
+
+.current-price {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.price-change {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.change-amount {
+    font-weight: bold;
+}
+
+.change-amount.positive {
+    color: #28a745;
+}
+
+.change-amount.negative {
+    color: #dc3545;
+}
+
+.change-period {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Stat Cards */
+.stat-card {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.stat-card h6 {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+    background: #2d2d2d;
+    color: #ffffff;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px 15px 0 0 !important;
+    border: none;
+    background: #1a1a1a !important;
+}
+
+/* Statistics */
+.stat-item {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: #2d2d2d;
+    color: #ffffff;
+}
+
+.stat-item label {
+    display: block;
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.stat-item span {
+    display: block;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Feature Items */
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: #2d2d2d;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    color: #ffffff;
+}
+
+.feature-item:hover {
+    background: #3d3d3d;
+}
+
+.feature-item i {
+    font-size: 1.2rem;
+    margin-right: 0.75rem;
+    width: 20px;
+    text-align: center;
+}
+
+.feature-item span {
+    font-weight: 500;
+}
+
+/* Update Items */
+.update-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #2d2d2d;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+}
+
+.update-item:hover {
+    background: #3d3d3d;
+    transform: translateX(5px);
+}
+
+.update-item i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    width: 30px;
+    text-align: center;
+}
+
+.update-item .label {
+    display: block;
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+}
+
+.update-item .value {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+/* Buttons */
+.btn-outline-primary {
+    border-color: var(--bitcoin-orange);
+    color: var(--bitcoin-orange);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--bitcoin-orange);
+    border-color: var(--bitcoin-orange);
+    color: white;
+}
+
+/* Chart Container */
+#price-chart {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Footer */
+footer {
+    margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .current-price {
+        font-size: 2rem;
+    }
+    
+    .price-change {
+        font-size: 1rem;
+    }
+    
+    .stat-card {
+        margin-bottom: 0.5rem;
+    }
+    
+    .update-item {
+        margin-bottom: 0.5rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .current-price {
+        font-size: 1.5rem;
+    }
+    
+    .bitcoin-logo {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--bitcoin-orange);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Number Formatting */
+.number-format {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+/* Price Change Animation */
+.price-update {
+    animation: priceUpdate 0.5s ease-in-out;
+}
+
+@keyframes priceUpdate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bitcoin-orange);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e67e22;
+} 
