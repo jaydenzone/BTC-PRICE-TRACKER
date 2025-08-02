@@ -4,12 +4,12 @@ Test script for Bitcoin Price Tracker
 """
 
 import requests
-import json
-from datetime import datetime
+import os
+from datetime import datetime  # THIS IS MY TEST APP
 
 def test_api_endpoints():
     """Test all API endpoints"""
-    base_url = "http://localhost:8080"
+    base_url = os.getenv("BASE_URL", "http://localhost:8080")
     
     print("🧪 Testing Bitcoin Price Tracker API...")
     print("=" * 50)
@@ -55,4 +55,4 @@ def test_api_endpoints():
     print("🎉 All tests completed!")
 
 if __name__ == "__main__":
-    test_api_endpoints() 
+    test_api_endpoints()
