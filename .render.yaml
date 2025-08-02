@@ -2,6 +2,6 @@ services:
   - type: web
     name: btc-price-tracker
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: ""
     startCommand: gunicorn app:app
     plan: free
